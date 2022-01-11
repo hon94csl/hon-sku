@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
-class AttrM extends Model implements AttrContract
+class Attr extends Model implements AttrContract
 {
     protected  $guarded = [ 'id' ];
 

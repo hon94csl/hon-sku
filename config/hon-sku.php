@@ -39,22 +39,22 @@ return [
         /*
          * sku模型，需实现 Hon\HonSku\Contracts\SkuContract
          */
-        'Sku' => \Hon\HonSku\Models\SkuM::class,
+        'Sku' => \Hon\HonSku\Models\Sku::class,
 
         /*
          * 选项模型，需实现 Hon\HonSku\Contracts\OptionContract
          */
-        'Option' => \Hon\HonSku\Models\OptionM::class,
+        'Option' => \Hon\HonSku\Models\Option::class,
 
         /*
          * 属性值模型,需实现 Hon\HonSku\Contracts\AttrContract
          */
-        'Attr' => \Hon\HonSku\Models\AttrM::class,
+        'Attr' => \Hon\HonSku\Models\Attr::class,
 
         /*
          * 属性与SKU多对多中间模型
          */
-        'AttrSku' => \Hon\HonSku\Models\AttrSkuM::class,
+        'AttrSku' => \Hon\HonSku\Models\AttrSku::class,
     ],
 
     /*

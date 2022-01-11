@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
  * Class AttrSkuM 属性已sku的轴心关系表
  * @package Hon\HonSku\Models
  */
-class AttrSkuM extends Pivot
+class AttrSku extends Pivot
 {
     public function __construct(array $attributes = [])
     {

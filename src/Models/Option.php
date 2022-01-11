@@ -12,7 +12,7 @@ namespace Hon\HonSku\Models;
 use Hon\HonSku\Contracts\OptionContract;
 use Illuminate\Database\Eloquent\Model;
 
-class OptionM extends Model implements OptionContract
+class Option extends Model implements OptionContract
 {
     protected $guarded = ['id'];
 

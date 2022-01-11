@@ -11,7 +11,7 @@ namespace Hon\HonSku\Traits;
 
 use Hon\HonSku\Contracts\AttrContract;
 use Hon\HonSku\Contracts\OptionContract;
-use Hon\HonSku\Models\SkuM;
+use Hon\HonSku\Models\Sku;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
@@ -141,7 +141,7 @@ trait HasSku
      * Time: 5:17 下午
      * @param array $position
      * @param array $payload
-     * @return SkuM|Model|mixed|object|null
+     * @return Sku|Model|mixed|object|null
      */
     public function syncSkuWithAttrs(array $position, array $payload)
     {
@@ -185,7 +185,7 @@ trait HasSku
             throw  new \InvalidArgumentException('同一SKU下的属性值的选项名称重复');
         }
 
-        $sku = SkuM::findByPosition($position);
+        $sku = Sku::findByPosition($position);
 
         $sku = $this->skus()->create($payload);
         $sku->attrs()->sync($position);

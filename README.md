@@ -55,8 +55,8 @@ class ProductM extends Model
 **选项新增**
 
 ```php
-use Hon\HonSku\Models\OptionM;
-OptionM::create(['name' => '尺寸']);
+use Hon\HonSku\Models\Option;
+Option::create(['name' => '尺寸']);
 ```
 
 **选项删除**
@@ -119,9 +119,9 @@ $product->syncSkuWithAttrs([$attr1, $attr2, $attr3], ['amount' => 5000, 'stock' 
 **获取SKU**
 
 ```php
-use Hon\HonSku\Models\SkuM;
+use Hon\HonSku\Models\Sku;
 // 通过属性值组合获取sku
-$sku = SkuM::findByPosition($attr1, $attr2);
+$sku = Sku::findByPosition($attr1, $attr2);
 // 获取产品sku实例
 $product->skus()->get();
 ```
@@ -136,7 +136,7 @@ $product->skus()->delete();
 **通过属性值组合获取SKU**
 
 ```php
-use Hon\HonSku\Models\SkuM;
+use Hon\HonSku\Models\Sku;
 Sku::findByPosition([$attr1, $attr2, $attr3])
 ```
 
@@ -156,7 +156,7 @@ $sku->removeAttrs([$attr1, $attr2])
 **完整示例**
 ```php
 // 创建产品
-$product = ProudctsM::create(['productName' => '75-85云皮腿肉']);
+$product = Proudcts::create(['productName' => '75-85云皮腿肉']);
 
 // 准备作为sku属性
 $unit = $product->addAttrValues('单位', ['包', '件']);

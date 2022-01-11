@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Collection;
 
-class SkuM extends Model implements SkuContract
+class Sku extends Model implements SkuContract
 {
     protected $guarded = ['id'];
 
@@ -133,13 +133,13 @@ class SkuM extends Model implements SkuContract
             ->toArray();
 
         // 子查询
-        $skuIdsQuery = AttrSkuM::select('sku_id')
+        $skuIdsQuery = AttrSku::select('sku_id')
             ->whereIn(
                 'sku_id',
-                AttrSkuM::select('sku_id')->whereIn('attr_id', $position)
+                AttrSku::select('sku_id')->whereIn('attr_id', $position)
             );
 
-        return SkuM::query()
+        return Sku::query()
             ->whereIn('id', $skuIdsQuery)
             ->withCount('attrs')
             ->having('attrs_count', '=', count($position))
