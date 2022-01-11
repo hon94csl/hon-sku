@@ -4,11 +4,11 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTmaicSkuTables extends Migration
+class CreateMorphSkuTables extends Migration
 {
     public function up()
     {
-        $tableNames = config('tmaic-sku.table_names');
+        $tableNames = config('hon-sku.table_names');
 
         Schema::create($tableNames['skus'], function (Blueprint $table) {
             $table->bigIncrements('id');
@@ -41,7 +41,7 @@ class CreateTmaicSkuTables extends Migration
 
     public function down()
     {
-        $tableNames = config('tmaic-sku.table_names');
+        $tableNames = config('hon-sku.table_names');
 
         Schema::dropIfExists($tableNames['skus']);
         Schema::dropIfExists($tableNames['options']);
