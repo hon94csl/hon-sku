@@ -142,6 +142,7 @@ class Sku extends Model implements SkuContract
         return Sku::query()
             ->whereIn('id', $skuIdsQuery)
             ->withCount('attrs')
+            ->group('id')
             ->having('attrs_count', '=', count($position))
             ->first();
     }
